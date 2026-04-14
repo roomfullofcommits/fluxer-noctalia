@@ -43,7 +43,7 @@ done
 
 if ! grep --silent THEME_LOADER_MAGIC "$appAsarPath"; then
 	echo "app looks unpatched, making backup"
-	cp "$appAsarPath" "$appAsarPath.bak"
+	sudo cp "$appAsarPath" "$appAsarPath.bak"
 	if ! [ $? -eq 0 ]; then
 		echo "Copy failed, try running this script with sudo"
 		echo "Exiting"
@@ -51,7 +51,7 @@ if ! grep --silent THEME_LOADER_MAGIC "$appAsarPath"; then
 	fi
 fi
 
-cp "$appAsarPath.bak" "$appAsarPath"
+sudo cp "$appAsarPath.bak" "$appAsarPath"
 if ! [ $? -eq 0 ]; then
 	echo "Copy failed, try running this script with sudo"
 	echo "Exiting"
@@ -67,7 +67,7 @@ asar e "$appAsarPath" "$tempDir"
 
 indexJsPath="$tempDir/dist/main/index.js"
 if ! test -e "$indexJsPath"; then
-	indexJsPath="$tempDir/src-electron/dist/main/index.js"
+	indexJsPath="$tempDir/src-electron/dist/main/window.js"
 fi
 if ! test -e "$indexJsPath"; then
 	echo "Couldn't find index.js, exiting"
@@ -77,7 +77,7 @@ fi
 echo // THEME_LOADER_MAGIC >> "$indexJsPath"
 cat themeLoader.js >> "$indexJsPath"
 
-asar p "$tempDir" "$appAsarPath"
+sudo asar p "$tempDir" "$appAsarPath"
 
 if grep --silent THEME_LOADER_MAGIC "$appAsarPath"; then
 	echo "Patch successful!"
@@ -85,7 +85,7 @@ else
 	echo "Patch failed"
 fi
 
-# rm -r "$tempDir"
+#rm -r "$tempDir"
 
 touch "${XDG_CONFIG_HOME:-$HOME/.config}/fluxer/theme.css"
 if ! [ $? -eq 0 ]; then

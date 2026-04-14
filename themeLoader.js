@@ -1,4 +1,6 @@
-{
+(async()=>{
+	const fs = await import('fs');
+
     const themeFile = (process.env["XDG_CONFIG_HOME"] || `${process.env["HOME"]}/.config`) + "/fluxer/theme.css";
     console.log(themeFile);
 
@@ -27,5 +29,5 @@
 		`)
 
 	}
-}
+})();
 
