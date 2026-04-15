@@ -2,11 +2,16 @@
 	const fs = await import('fs');
 
     const themeFile = (process.env["XDG_CONFIG_HOME"] || `${process.env["HOME"]}/.config`) + "/fluxer/theme.css";
-    console.log(themeFile);
 
 	fs.watchFile(themeFile, {persistent: false, interval: 200}, loadCSS);
 
-	const intervalID = setInterval(()=>mainWindow?.webContents && clearInterval(intervalID) || mainWindow.webContents.on('dom-ready', loadCSS), 10);
+	const intervalID = setInterval(()=>
+		{if (mainWindow?.webContents) {
+			clearInterval(intervalID);
+			mainWindow.webContents.on('dom-ready', loadCSS)
+		}},
+		10
+	);
 
 	async function loadCSS() {
 
