@@ -1,111 +1,48 @@
-/* :root { --background-primary: #FF0000; }
-:root { --background-secondary: #FF0000; }
-:root { --background-secondary-lighter: var(--background-secondary-alt); }
-:root { --background-secondary-alt: #FF0000; }
-:root { --background-tertiary: #FF0000; }
-:root { --background-textarea: #FF0000; }
-:root { --background-header-primary: #FF0000; }
-:root { --background-header-primary-hover: #FF0000; }
-:root { --background-header-secondary: #FF0000; }
-:root { --background-modifier-hover: #FF0000; }
-:root { --guild-list-foreground: #FF0000; }
-:root { --background-modifier-selected: #FF0000; }
-:root { --background-modifier-accent: #FF0000; }
-:root { --background-modifier-accent-focus: #FF0000; }
-:root { --brand-primary: #FF0000; }
-:root { --brand-secondary: #FF0000; }
-:root { --brand-primary-light: #FF0000; }
-:root { --brand-primary-fill: #FF0000; }
-:root { --status-online: #FF0000; }
-:root { --status-idle: #FF0000; }
-:root { --status-dnd: #FF0000; }
-:root { --status-offline: #FF0000; }
-:root { --status-danger: #FF0000; }
-:root { --text-primary: #FF0000; }
-:root { --text-secondary: #FF0000; }
-:root { --text-tertiary: #FF0000; }
-:root { --text-primary-muted: #FF0000; }
-:root { --text-chat: #FF0000; }
-:root { --text-chat-muted: #FF0000; }
-:root { --text-link: #FF0000; }
-:root { --text-on-brand-primary: #FF0000; }
-:root { --text-tertiary-muted: #FF0000; }
-:root { --text-tertiary-secondary: #FF0000; }
-:root { --border-color: #FF0000; }
-:root { --border-color-hover: #FF0000; }
-:root { --border-color-focus: #FF0000; }
-:root { --accent-purple: #FF0000; }
-:root { --alert-note-color: #FF0000; }
-:root { --alert-tip-color: #FF0000; }
-:root { --alert-warning-color: #FF0000; }
-:root { --alert-caution-color: #FF0000; }
-:root { --alert-important-color: #FF0000; }
-:root { --markup-mention-fill: #FF0000; }
-:root { --markup-interactive-hover-fill: #FF0000; }
-:root { --button-primary-fill: #FF0000; }
-:root { --button-primary-active-fill: #FF0000; }
-:root { --button-primary-text: #FF0000; }
-:root { --button-secondary-fill: #FF0000; }
-:root { --button-secondary-active-fill: #FF0000; }
-:root { --button-secondary-text: #FF0000; }
-:root { --button-danger-fill: #FF0000; }
-:root { --button-danger-active-fill: #FF0000; }
-:root { --button-danger-text: #FF0000; }
-:root { --button-danger-outline-border: #FF0000; }
-:root { --button-danger-outline-text: #FF0000; }
-:root { --button-danger-outline-active-fill: #FF0000; }
-:root { --button-danger-outline-active-border: #FF0000; }
-:root { --button-ghost-text: #FF0000; }
-:root { --button-inverted-fill: #FF0000; }
-:root { --button-inverted-text: #FF0000; }
-:root { --button-outline-border: #FF0000; }
-:root { --button-outline-text: #FF0000; }
-:root { --button-outline-active-fill: #FF0000; }
-:root { --button-outline-active-border: #FF0000; }
-:root { --bg-code: #FF0000; } */
-
-:root { --background-primary: {{colors.surface.default.hex}}; }
-:root { --background-secondary: {{colors.surface_container.default.hex}}; }
-:root { --background-secondary-lighter: var(--background-secondary-alt); }
-:root { --background-secondary-alt: {{colors.surface_container_low.default.hex}}; }
-:root { --background-tertiary: {{colors.surface_container.default.hex}}; }
-:root { --background-textarea: {{colors.surface_container_high.default.hex}}; }
-:root { --brand-primary: {{colors.primary.dark.hex}}; }
-:root { --guild-list-foreground: {{colors.surface_container_highest.default.hex}}; }
-:root { --panel-control-bg: {{colors.surface_container_high.default.hex}}; }
-:root { --brand-primary-fill: {{colors.on_surface.light.hex}}; }
-:root { --text-primary: {{colors.on_surface.default.hex}}; }
-:root { --text-primary-muted: {{colors.on_surface_variant.default.hex | darken 10}}; }
-:root { --text-secondary: {{colors.on_surface_variant.default.hex | darken 20}}; }
-:root { --text-tertiary: {{colors.on_surface_variant.default.hex | darken 25}}; }
-:root { --text-tertiary-muted: {{colors.on_surface_variant.default.hex | darken 30}}; }
-:root { --text-chat: {{colors.on_surface.default.hex}}; }
-:root { --text-link: var(--brand-primary); }
-:root { --text-code: {{colors.tertiary.default.hex}}; }
-.DiscoveryButton\.module__iconTextSelected___ZjlkNW, .DMList\.module__clickableItemSelected___XzM3ZG .DMList\.module__clickableItemIcon___XzM3ZG {
+:root {
+	--background-primary: {{colors.surface.default.hex}};
+	--background-secondary: {{colors.surface_container.default.hex}};
+	--background-secondary-lighter: var(--background-secondary-alt);
+	--background-secondary-alt: {{colors.surface_container_low.defau.hex}};
+	--background-tertiary: {{colors.surface_container.default.hex}};
+	--background-textarea: {{colors.surface_container_high.default.hex}};
+	--brand-primary: {{colors.secondary.default.hex}};
+	--brand-primary-light: {{colors.secondary.default.hex}};
+	--brand-primary-fill: {{colors.on_surface.light.hex}};
+	--guild-list-foreground: {{colors.surface_container_highest.default.hex}}
+	--panel-control-bg: {{colors.surface_container_high.default.hex}};
+	--text-primary: {{colors.on_surface.default.hex}};
+	--text-primary-muted: {{colors.on_surface_variant.default.hex | darken 10}
+	--text-secondary: {{colors.on_surface_variant.default.hex | darken 20}};
+	--text-tertiary: {{colors.on_surface_variant.default.hex | darken 25}};
+	--text-tertiary-muted: {{colors.on_surface_variant.default.hex | darken 30}}
+	--text-chat: {{colors.on_surface.default.hex}};
+	--text-link: var(--brand-primary);
+	--text-code: {{colors.tertiary.default.hex}};
+	--border-color: {{colors.outline_variant.dark.hex}};
+	--background-header-secondary: var(--border-color);
+	--background-modifier-accent: var(--border-color);
+	--control-button-normal-text: {{colors.secondary.default.hex}};
+	--control-button-hover-text: {{colors.tertiary.default.hex}};
+	--surface-interactive-selected-bg: {{colors.secondary.default.hex}};
+}
+[class*="DiscoveryButton.module__iconTextSelected_"], [class*="DMList.module__clickableItemSelected_"] [class*="DMList.module__clickableItemIcon_"] {
 	color: var(--brand-primary-fill) !important;
 }
-:root { --border-color: {{colors.outline_variant.dark.hex}}; }
-:root { --background-header-secondary: var(--border-color); }
-:root { --background-modifier-accent: var(--border-color); }
-:root { --control-button-normal-text: {{colors.secondary.default.hex}}; }
-:root { --control-button-hover-text: {{colors.tertiary.default.hex}}; }
-.TextareaButton\.module__button___XzMzZT, .ChannelHeader\.module__iconButton___XzkyNm {
+[class*="TextareaButton.module__button_"], [class*="ChannelHeader.module__iconButton_"] {
 	color: {{colors.secondary.default.hex}};
 	&:hover {
 		color: {{colors.tertiary.default.hex}} !important;
 	}
 }
-.DMFriendsView\.module__primary___Y2Y1Nz:hover {
+[class*="DMFriendsView.module__primary_"]:hover {
 	opacity: 1 !important;
 	background-color: {{colors.tertiary.default.hex}} !important;
 }
-:root { --surface-interactive-selected-bg: {{colors.secondary.default.hex}}; }
-.ChannelItem\.module__channelItemSelected___Xzk5Zm, .DMList\.module__dmItemSelected___XzM3ZG {
+[class*="ChannelItem.module__channelItemSelected_"], [class*="GuildsLayout.module__fluxerButtonIconSelected_"], [class*="SettingsModalLayout.module__sidebarItemSelected_"], [class*="SettingsModalLayout.module__sidebarSubItemActive_"] {
 	background-color: {{colors.secondary.default.hex}};
-	&, button, svg { color: {{colors.on_surface_variant.light.hex}}; }
+	&, button, svg { color: {{colors.on_surface_variant.light.hex}} !important; }
 }
-.ChannelItem\.module__channelItem___Xzk5Zm:hover, .DMList\.module__dmItem___XzM3ZG:hover, .GuildsLayout\.module__guildIcon___XzkwZG:hover {
+[class*="ChannelItem.module__channelItem_"]:hover, [class*="GuildsLayout.module__guildIcon_"]:hover, [class*="SettingsModalLayout.module__sidebarItem_"]:hover, [class*="Button.module__button_"]:not([class*="Textarea"]):hover, [class*="SettingsModalLayout.module__sidebarSubItem_"]:hover {
 	background-color: {{colors.tertiary.default.hex}} !important;
 	&, button, svg { color: {{colors.on_surface_variant.light.hex}} !important; }
 }
