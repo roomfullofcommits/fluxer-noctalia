@@ -83,6 +83,7 @@ if ! grep --silent THEME_LOADER_MAGIC "$appAsarPath"; then
 	fi
 fi
 
+echo "resetting $appAsarPath before applying patch"
 sudo cp "$appAsarPath.bak" "$appAsarPath"
 if ! [ $? -eq 0 ]; then
 	echo "Copy failed, try running this script with sudo"
@@ -95,6 +96,7 @@ if ! [ $? -eq 0 ]; then
 	echo "Couldn't create temp directory, exiting"
 	exit 2
 fi
+echo "extracting $appAsarPath"
 asar e "$appAsarPath" "$tempDir"
 
 indexJsPath="$tempDir/dist/main/MainApp.js"
@@ -106,6 +108,7 @@ if ! test -e "$indexJsPath"; then
 	exit 4
 fi
 
+echo "patching $indexJsPath"
 echo // THEME_LOADER_MAGIC >> "$indexJsPath"
 cat themeLoader.js >> "$indexJsPath"
 
@@ -117,7 +120,7 @@ else
 	echo "Patch failed"
 fi
 
-#rm -r "$tempDir"
+rm -r "$tempDir"
 
 configFolder=0
 if [ $binName = fluxer ]; then configFolder=fluxer
@@ -132,3 +135,4 @@ else
 fi
 cp -sf $PWD/theme-template.css "${XDG_CONFIG_HOME:-$HOME/.config}/$configFolder/"
 
+echo && echo "Done!"
