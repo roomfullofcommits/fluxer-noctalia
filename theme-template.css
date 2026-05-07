@@ -9,6 +9,7 @@
 	--brand-primary: {{colors.primary.default.hex}};
 	--brand-primary-light: {{colors.secondary.default.hex}};
 	--brand-primary-fill: {{colors.on_surface.light.hex}};
+	--brand-secondary: {{colors.tertiary.default.hex}};
 	--guild-list-foreground: {{colors.surface_container_highest.default.hex}};
 	--panel-control-bg: {{colors.surface_container_high.default.hex}};
 	--text-primary: {{colors.on_surface.default.hex}};
